@@ -82,6 +82,9 @@ into `archive/`, because a `diff all` only restores cleanly on the version it ca
    **Full chip erase** on.
 2. Open the **CLI** tab, paste the whole of `diff-all.txt`, press Enter.
 3. If the CLI reports any error the batch refuses to `save`. Fix the line and paste again.
-4. Run the pre-flight checks in the craft's README before flying.
+4. Run `feature` and check TELEMETRY (and the craft's other features) are enabled. A diff only
+   lists what differs from the defaults, and the defaults change with the build options, so a
+   feature that was a default on one build can come back off on another.
+5. Run the pre-flight checks in the craft's README before flying.
 
 Props off whenever the craft is powered on the bench.

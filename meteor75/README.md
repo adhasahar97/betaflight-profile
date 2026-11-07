@@ -85,7 +85,8 @@ Restore: radio in USB Storage mode, copy `radio-model.yml` to `MODELS/model4.yml
 
 ## Telemetry
 
-`feature TELEMETRY` (on by default in 2026.6.2), `beacon RX_LOST` and `beacon RX_SET` on,
+`feature TELEMETRY` (set explicitly: the Chirp build has it off by default, and without it the
+radio reads 0 V and the low-battery alert fires), `beacon RX_LOST` and `beacon RX_SET` on,
 `report_cell_voltage = ON` (`RxBt` on the radio is the average cell voltage, which the shared
 radio alerts expect).
 

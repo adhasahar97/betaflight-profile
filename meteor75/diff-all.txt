@@ -17,6 +17,7 @@ signature
 # name: Meteor75 Pro
 
 # feature
+feature TELEMETRY
 feature OSD
 
 # serial
