@@ -341,10 +341,6 @@ customFn:
       swtch: "SE2"
       func: PLAY_TRACK
       def: "armed,1,1x"
-   7:
-      swtch: "SC2"
-      func: TRAINER
-      def: "sticks,0"
 flightModeData: 
    0:
       name: ""

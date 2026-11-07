@@ -43,19 +43,39 @@ The build also pulls in Altitude Hold and Position Hold with GPS. No magnetomete
 
 ## Modes
 
-| Mode | Switch | Range |
-|---|---|---|
-| ARM | AUX1 (ch5) | 1700-2100 |
-| ANGLE | AUX5 (ch9) | 1700-2100 (high) |
-| HORIZON | AUX5 (ch9) | 1300-1700 (middle) |
-| GPS RESCUE | AUX3 (ch7) | 1225-2100 |
-| BEEPER | AUX4 (ch8) | 1700-2100 |
-| FLIP OVER AFTER CRASH (turtle) | AUX6 (ch10) | 1700-2100 |
-
-GPS Rescue covers 1225-2100, so on a 3-position switch it is active in the middle **and** the
-high position. Change it to 1700-2100 if it should be high only.
+| Mode | Channel | Range | Radio switch (TX15) |
+|---|---|---|---|
+| ARM | AUX1 (ch5) | 1700-2100 | SE down |
+| ANGLE | AUX5 (ch9) | 1700-2100 | SD down |
+| HORIZON | AUX5 (ch9) | 1300-1700 | SD middle (SD up = Acro) |
+| GPS RESCUE | AUX3 (ch7) | 1700-2100 | SB down |
+| BEEPER | AUX4 (ch8) | 1700-2100 | SC down |
+| FLIP OVER AFTER CRASH (turtle) | AUX6 (ch10) | 1700-2100 | SF, hold (momentary) |
 
 Failsafe procedure: GPS Rescue (`gps_rescue_allow_arming_without_fix = ON`).
+
+## Radio (EdgeTX)
+
+RadioMaster TX15, EdgeTX 3.0.0, internal ELRS module (CRSF, 16 channels). Model `STELLAR` is
+`MODELS/model1.yml` on the radio's SD card; copy in [`radio-model.yml`](radio-model.yml).
+
+| Channel | Source | Used for |
+|---|---|---|
+| CH1-4 | Ail, Ele, Thr, Rud | AETR |
+| CH5 (AUX1) | SE (2-pos) | ARM |
+| CH6 (AUX2) | SA (3-pos) | unused on the quad |
+| CH7 (AUX3) | SB (3-pos) | GPS Rescue |
+| CH8 (AUX4) | SC (3-pos) | Beeper |
+| CH9 (AUX5) | SD (3-pos) | Acro / Horizon / Angle |
+| CH10 (AUX6) | SF (momentary) | Turtle |
+| CH11-12 | P1, P2 | unused |
+| CH15-16 | TILT_X, TILT_Y | unused |
+
+Special functions: voice call-outs on SA1 (`preact`), SB2 (`gps`), SD0 (`acrmod`), SE2 (`armed`);
+SF2 also runs the `setGyro` script; RGB LED always on. The template's TRAINER function on SC2
+was removed (SC down is the beeper).
+
+Restore: radio in USB Storage mode, copy `radio-model.yml` to `MODELS/model1.yml`, eject.
 
 ## Telemetry and lost-quad beeper
 
