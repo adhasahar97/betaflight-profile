@@ -1,0 +1,180 @@
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.5.3 Nov 23 2025 / 16:24:59 (0e533ba76) MSP API: 1.46
+# config rev: 2c5a8b5
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name HAKRCF722V2
+manufacturer_id HARC
+mcu_id 0037001d3433510838363534
+signature 
+
+# name: ROC7
+
+# feature
+feature SERVO_TILT
+feature GPS
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+feature CHANNEL_FORWARDING
+feature ESC_SENSOR
+
+# serial
+serial 1 64 115200 57600 0 115200
+serial 3 131073 115200 57600 0 115200
+serial 4 1024 115200 57600 0 115200
+serial 5 2 115200 38400 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# led
+led 0 12,15::G:0
+led 1 13,15::G:0
+led 2 14,15::G:0
+led 3 15,15::G:0
+
+# aux
+aux 0 0 0 1800 2100 0 0
+aux 1 1 4 900 1200 0 0
+aux 2 46 2 1700 2100 0 0
+aux 3 13 3 1800 2100 0 0
+aux 4 35 5 1700 2100 0 0
+aux 5 36 1 1700 2100 0 0
+
+# rxfail
+rxfail 3 a
+rxfail 6 s 2000
+rxfail 8 s 2000
+
+# master
+set gyro_lpf1_static_hz = 0
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set gyro_lpf1_dyn_min_hz = 0
+set acc_calibration = 9,22,23,1
+set mag_hardware = NONE
+set blackbox_sample_rate = 1/2
+set dshot_idle_value = 450
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set failsafe_switch_mode = STAGE2
+set failsafe_procedure = GPS-RESCUE
+set align_board_yaw = 90
+set vbat_max_cell_voltage = 435
+set ibata_scale = 140
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_auto_baud = ON
+set gps_ublox_flight_model = AIRBORNE_1G
+set gps_ublox_use_galileo = ON
+set gps_rescue_min_start_dist = 30
+set gps_rescue_ascend_rate = 650
+set gps_rescue_return_alt = 50
+set gps_rescue_ground_speed = 1000
+set gps_rescue_max_angle = 35
+set gps_rescue_descend_rate = 100
+set gps_rescue_throttle_max = 1600
+set gps_rescue_allow_arming_without_fix = ON
+set deadband = 2
+set yaw_deadband = 2
+set pid_process_denom = 2
+set osd_warn_bitmask = 286719
+set osd_vbat_pos = 449
+set osd_link_quality_pos = 3333
+set osd_link_tx_power_pos = 3365
+set osd_tim_2_pos = 2314
+set osd_flymode_pos = 2305
+set osd_throttle_pos = 2616
+set osd_ah_pos = 2233
+set osd_current_pos = 485
+set osd_mah_drawn_pos = 2378
+set osd_craft_name_pos = 2049
+set osd_pilot_name_pos = 2177
+set osd_gps_speed_pos = 2145
+set osd_gps_lon_pos = 2099
+set osd_gps_lat_pos = 2131
+set osd_gps_sats_pos = 2081
+set osd_home_dir_pos = 2093
+set osd_home_dist_pos = 2087
+set osd_flight_dist_pos = 2055
+set osd_altitude_pos = 2113
+set osd_power_pos = 487
+set osd_avg_cell_voltage_pos = 2346
+set osd_pit_ang_pos = 289
+set osd_disarmed_pos = 2550
+set osd_stick_overlay_left_pos = 2543
+set osd_stick_overlay_right_pos = 2559
+set debug_mode = GYRO_SCALED
+set craft_name = ROC7
+set pilot_name = ADHA
+
+profile 0
+
+# profile 0
+set anti_gravity_gain = 120
+set p_pitch = 106
+set i_pitch = 95
+set d_pitch = 108
+set f_pitch = 141
+set p_roll = 81
+set i_roll = 72
+set d_roll = 76
+set f_roll = 108
+set p_yaw = 61
+set i_yaw = 101
+set f_yaw = 0
+set d_min_roll = 69
+set d_min_pitch = 98
+set feedforward_jitter_factor = 10
+set dyn_idle_min_rpm = 35
+set simplified_pids_mode = OFF
+set simplified_master_multiplier = 165
+set simplified_i_gain = 50
+set simplified_d_gain = 140
+set simplified_pi_gain = 110
+set simplified_dmax_gain = 30
+set simplified_feedforward_gain = 55
+set simplified_pitch_d_gain = 125
+set simplified_pitch_pi_gain = 125
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 6
+set roll_expo = 20
+set pitch_expo = 20
+set yaw_expo = 20
+set roll_srate = 62
+set pitch_srate = 62
+set yaw_srate = 62
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
