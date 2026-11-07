@@ -6,6 +6,7 @@ Betaflight configuration backups for my quads, one folder per craft.
 |---|---|---|---|
 | [STELLAR25](stellar25/) | JHEMCU GHF405AIO-HD (`JHEF405PRO`) | Betaflight 2026.6.2 | [`stellar25/diff-all.txt`](stellar25/diff-all.txt) |
 | [ROC7](roc7/) | HAKRC F722 V2 (`HAKRCF722V2`) | Betaflight 2026.6.2 | [`roc7/diff-all.txt`](roc7/diff-all.txt) |
+| [Meteor75 Pro](meteor75/) | BetaFPV G473 (`BETAFPVG473`) | Betaflight 4.5.1 | [`meteor75/diff-all.txt`](meteor75/diff-all.txt) |
 
 Open work: [TODO.md](TODO.md).
 

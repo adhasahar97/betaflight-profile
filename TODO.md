@@ -1,5 +1,15 @@
 # TODO
 
+## Meteor75 Pro: onboarding (started 2026-11-08)
+
+- [ ] Flash Betaflight 2026.6.2, target `BETAFPVG473`, with Full chip erase (options in [meteor75/README.md](meteor75/README.md)).
+- [ ] Restore the migrated config: D-min to D-max swap, renames, gyro `CW90` becomes `align_board_yaw = 270`.
+- [ ] Setup tab orientation check (nose down, roll right, yaw right).
+- [ ] Standard switch layout (ANGLE to SD down), `feature TELEMETRY`, `report_cell_voltage = ON`.
+- [ ] Radio: new model with the next free ELRS model ID (2), whoop telemetry screen, battery alerts.
+- [ ] Bind the receiver, set the 2.4 GHz packet rate in the ExpressLRS Lua, check it links.
+- [ ] Motors tab, props off: motor order and direction. First hover in Angle mode.
+
 ## STELLAR25: chirp autotune (in progress, set up 2026-11-07)
 
 Firmware has the Chirp build option and the test settings are on the quad (see
