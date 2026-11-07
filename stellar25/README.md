@@ -43,14 +43,22 @@ The build also pulls in Altitude Hold and Position Hold with GPS. No magnetomete
 
 ## Modes
 
+Standard layout shared with every quad, see [the root README](../README.md#standard-switch-layout).
+
 | Mode | Channel | Range | Radio switch (TX15) |
 |---|---|---|---|
 | ARM | AUX1 (ch5) | 1700-2100 | SE down |
-| ANGLE | AUX5 (ch9) | 1700-2100 | SD down |
-| HORIZON | AUX5 (ch9) | 1300-1700 | SD middle (SD up = Acro) |
+| ALT HOLD + POS HOLD | AUX3 (ch7) | 1300-1700 | SB middle |
 | GPS RESCUE | AUX3 (ch7) | 1700-2100 | SB down |
 | BEEPER | AUX4 (ch8) | 1700-2100 | SC down |
+| HORIZON | AUX5 (ch9) | 1300-1700 | SD middle (SD up = Acro) |
+| ANGLE | AUX5 (ch9) | 1700-2100 | SD down |
 | FLIP OVER AFTER CRASH (turtle) | AUX6 (ch10) | 1700-2100 | SF, hold (momentary) |
+| CHIRP + BLACKBOX (autotune test only) | AUX2 (ch6) | 1700-2100 | SA down |
+
+Slots `aux 0-7` are the standard block, `aux 8-9` the chirp test. ALT/POS HOLD added
+2026-11-07; Position Hold has no compass here and shows `POS HOLD FAIL` until GPS has worked out
+the heading from a stretch of straight forward flight.
 
 Failsafe procedure: GPS Rescue (`gps_rescue_allow_arming_without_fix = ON`).
 
@@ -135,8 +143,8 @@ and recommends gains. Needs the **Chirp** cloud-build option. Test setup current
 ```
 set debug_mode = CHIRP
 set blackbox_high_resolution = ON
-aux 6 55 1 1700 2100 0 0   # CHIRP mode on AUX2 (SA down)
-aux 7 26 1 1700 2100 0 0   # BLACKBOX on AUX2: log only while SA is down (8 MB flash)
+aux 8 55 1 1700 2100 0 0   # CHIRP mode on AUX2 (SA down)
+aux 9 26 1 1700 2100 0 0   # BLACKBOX on AUX2: log only while SA is down (8 MB flash)
 ```
 
 Flight: open space, fresh pack, hover 2-3 m in Angle mode. SA down: OSD shows `CHIR`, the
@@ -144,7 +152,7 @@ quad shakes on roll; hold position, wait for `CHIRP IS FINISHED`, SA up. Repeat 
 then yaw (each SA down moves to the next axis). SA up stops it at once.
 
 Then: Blackbox tab, *Save flash to file*; Autotune tab, *Import* the `.bbl`; review and apply.
-Afterwards remove the test lines (`debug_mode`, `blackbox_high_resolution`, aux 6/7) and erase
+Afterwards remove the test lines (`debug_mode`, `blackbox_high_resolution`, aux 8/9) and erase
 the flash.
 
 ## Pre-flight checks after a restore or reflash

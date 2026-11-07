@@ -10,7 +10,7 @@ Firmware has the Chirp build option and the test settings are on the quad (see
 - [ ] Blackbox tab: *Save flash to file* (`.bbl`).
 - [ ] Autotune tab: *Import* the `.bbl`, review the recommended gains before *Apply*.
 - [ ] Remove the test settings and save:
-      `set debug_mode = NONE`, `set blackbox_high_resolution = OFF`, `aux 6 0 0 900 900 0 0`, `aux 7 0 0 900 900 0 0`.
+      `set debug_mode = NONE`, `set blackbox_high_resolution = OFF`, `aux 8 0 0 900 900 0 0`, `aux 9 0 0 900 900 0 0`.
 - [ ] Erase the blackbox flash, `diff all`, commit the new tune to `stellar25/diff-all.txt`.
 
 ## ROC7: checks after the 2026.6.2 upgrade
