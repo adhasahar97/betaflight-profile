@@ -62,7 +62,7 @@ heading from a stretch of straight forward flight.
 
 RadioMaster TX15, model `ROC7` = `MODELS/model3.yml` on the SD card, copy in
 [`radio-model.yml`](radio-model.yml). Cloned 2026-11-07 from the STELLAR model: same channel map
-and low-battery alerts (L1 < 3.5 V/cell, L2 < 3.3 V/cell, LiPo; quiet with no pack via L3); see
+and low-battery alerts (voice from 3.7 V/cell, buzz from 3.5 V, warning tone at 3.3 V, LiPo; quiet with no pack); see
 [stellar25/README.md](../stellar25/README.md#radio-edgetx). Model ID 1 (900 MHz).
 
 Long-range screens:

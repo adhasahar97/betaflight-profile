@@ -344,6 +344,14 @@ logicalSw:
       lsState: 0
       delay: 0
       duration: 0
+   3:
+      func: FUNC_VNEG
+      def: "tele(15),37"
+      andsw: "L3"
+      lsPersist: 0
+      lsState: 0
+      delay: 30
+      duration: 0
 customFn: 
    0:
       swtch: "ON"
@@ -366,7 +374,7 @@ customFn:
       func: PLAY_TRACK
       def: "armed,1,1x"
    6:
-      swtch: "L1"
+      swtch: "L4"
       func: PLAY_VALUE
       def: "tele(15),1,10"
    7:

@@ -68,8 +68,8 @@ Failsafe: Betaflight default (drop), no GPS Rescue.
 
 RadioMaster TX15, model `METEOR75` = `MODELS/model4.yml` on the SD card, copy in
 [`radio-model.yml`](radio-model.yml). Cloned 2026-11-08 from the STELLAR model: same channel map
-and low-battery alerts (L1 < 3.5 V/cell for 3 s, L2 < 3.3 V/cell for 2 s, quiet with no
-pack via L3); see
+and low-battery alerts (voice from 3.7 V/cell, buzz from 3.5 V, warning tone at 3.3 V, quiet with no
+pack); see
 [stellar25/README.md](../stellar25/README.md#radio-edgetx). ELRS model ID 2 (2.4 GHz). The SB down
 `gps` voice call-out is removed, because SB does nothing here.
 

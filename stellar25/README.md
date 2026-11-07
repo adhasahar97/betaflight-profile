@@ -97,15 +97,18 @@ Low-battery alerts, on average cell voltage (`report_cell_voltage = ON` on the q
 
 | Logical switch | Condition | Special functions |
 |---|---|---|
-| L1 | RxBt < 3.5 V for 3 s, AND L3 | speak RxBt every 10 s, light haptic every 10 s |
+| L4 | RxBt < 3.7 V for 3 s, AND L3 | speak RxBt every 10 s (voice only, no haptic) |
+| L1 | RxBt < 3.5 V for 3 s, AND L3 | light haptic every 10 s (the voice carries on from L4) |
 | L2 | RxBt < 3.3 V for 2 s, AND L3 | `Wrn2` tone every 5 s, strong haptic every 5 s |
-| L3 | RxBt > 1.0 V (a pack is plugged in) | none, gates L1 and L2 |
+| L3 | RxBt > 1.0 V (a pack is plugged in) | none, gates L1, L2 and L4 |
 
 Not tied to the arm switch: EdgeTX already treats telemetry-based logical switches as off when
 telemetry is not streaming, so the alerts also warn about a low pack left plugged in on the bench.
 L3 (added 2026-11-08) keeps them quiet on USB power: the receiver still sends telemetry, but with
 no pack Betaflight reports 0 V, which used to trigger "zero volt" call-outs. Same on every model.
 Thresholds match Betaflight's `vbat_warning_cell_voltage` (3.5) and `vbat_min_cell_voltage` (3.3).
+L4 (added 2026-11-08) is an early heads-up at 3.7 V; the voice moved to it from L1 so the two
+do not talk over each other below 3.5 V.
 
 Restore: radio in USB Storage mode, copy `radio-model.yml` to `MODELS/model1.yml`, eject.
 
