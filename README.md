@@ -9,6 +9,33 @@ Betaflight configuration backups for my quads, one folder per craft.
 
 Open work: [TODO.md](TODO.md).
 
+## Standard switch layout
+
+Every quad uses the same modes on the same switches (RadioMaster TX15, EdgeTX). Each quad has its
+own radio model, cloned from the same template, so the channel order is identical.
+
+| Switch | Channel | Up | Middle | Down |
+|---|---|---|---|---|
+| SE (2-pos) | ch5, AUX1 | disarmed | | ARM |
+| SA (3-pos) | ch6, AUX2 | | | spare (CHIRP + BLACKBOX during autotune) |
+| SB (3-pos) | ch7, AUX3 | | ALT HOLD + POS HOLD | GPS RESCUE |
+| SC (3-pos) | ch8, AUX4 | | spare | BEEPER |
+| SD (3-pos) | ch9, AUX5 | ACRO | HORIZON | ANGLE |
+| SF (button) | ch10, AUX6 | | | TURTLE (hold) |
+
+Ranges: down = 1700-2100, middle = 1300-1700. No PREARM. Spare channels: ch11-12 (P1, P2 pots).
+
+```
+aux 0 0 0 1700 2100 0 0    # ARM          AUX1
+aux 1 1 4 1700 2100 0 0    # ANGLE        AUX5 down
+aux 2 46 2 1700 2100 0 0   # GPS RESCUE   AUX3 down
+aux 3 13 3 1700 2100 0 0   # BEEPER       AUX4 down
+aux 4 35 5 1700 2100 0 0   # TURTLE       AUX6
+aux 5 2 4 1300 1700 0 0    # HORIZON      AUX5 middle
+aux 6 3 2 1300 1700 0 0    # ALT HOLD     AUX3 middle
+aux 7 11 2 1300 1700 0 0   # POS HOLD     AUX3 middle
+```
+
 ## Layout
 
 ```

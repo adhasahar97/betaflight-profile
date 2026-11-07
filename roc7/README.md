@@ -41,16 +41,22 @@ Betaflight **2026.6.2**, cloud build:
 
 ## Modes
 
-| Mode | Channel | Range |
-|---|---|---|
-| ARM | AUX1 (ch5) | 1800-2100 |
-| PREARM | AUX2 (ch6) | 1700-2100 |
-| GPS RESCUE | AUX3 (ch7) | 1700-2100 |
-| BEEPER | AUX4 (ch8) | 1800-2100 |
-| ANGLE | AUX5 (ch9) | 900-1200 (low) |
-| FLIP OVER AFTER CRASH (turtle) | AUX6 (ch10) | 1700-2100 |
+Standard layout shared with every quad, see [the root README](../README.md#standard-switch-layout).
 
-Arming needs PREARM (AUX2 high) first.
+| Mode | Channel | Range | Radio switch (TX15) |
+|---|---|---|---|
+| ARM | AUX1 (ch5) | 1700-2100 | SE down |
+| ALT HOLD + POS HOLD | AUX3 (ch7) | 1300-1700 | SB middle |
+| GPS RESCUE | AUX3 (ch7) | 1700-2100 | SB down |
+| BEEPER | AUX4 (ch8) | 1700-2100 | SC down |
+| HORIZON | AUX5 (ch9) | 1300-1700 | SD middle |
+| ANGLE | AUX5 (ch9) | 1700-2100 | SD down (SD up = Acro) |
+| FLIP OVER AFTER CRASH (turtle) | AUX6 (ch10) | 1700-2100 | SF, hold |
+
+Changed 2026-11-07 to the standard layout: PREARM removed (SE alone arms), ARM and BEEPER
+ranges 1800 to 1700, **ANGLE moved from SD up to SD down**, HORIZON and ALT/POS HOLD added.
+Position Hold has no compass here: it shows `POS HOLD FAIL` until GPS has worked out the
+heading from a stretch of straight forward flight.
 
 ## Failsafe and GPS Rescue
 
@@ -59,7 +65,7 @@ set failsafe_procedure = GPS-RESCUE
 set failsafe_switch_mode = STAGE2
 rxfail 3 a          # throttle: auto (the default on 2026.6, so not in the diff)
 rxfail 6 s 2000     # AUX3 (GPS Rescue) high on signal loss
-rxfail 8 s 2000     # AUX5 high on signal loss (Angle is 900-1200, so Angle off)
+rxfail 8 s 2000     # AUX5 high on signal loss = Angle on
 set gps_rescue_return_alt = 50
 set gps_rescue_min_start_dist = 30
 set gps_rescue_ground_speed = 1000
@@ -76,8 +82,8 @@ is set; Rescue then has nowhere to return to.
 
 ## Telemetry
 
-`feature TELEMETRY` on, `beacon RX_LOST` and `beacon RX_SET` on. `report_cell_voltage` is not set,
-so `RxBt` on the radio is pack voltage.
+`feature TELEMETRY` on, `beacon RX_LOST` and `beacon RX_SET` on, `report_cell_voltage = ON`
+(`RxBt` on the radio is the average cell voltage, which the shared radio alerts expect).
 
 ## Tune
 

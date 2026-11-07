@@ -40,12 +40,14 @@ led 2 14,15::G:0
 led 3 15,15::G:0
 
 # aux
-aux 0 0 0 1800 2100 0 0
-aux 1 1 4 900 1200 0 0
+aux 0 0 0 1700 2100 0 0
+aux 1 1 4 1700 2100 0 0
 aux 2 46 2 1700 2100 0 0
-aux 3 13 3 1800 2100 0 0
+aux 3 13 3 1700 2100 0 0
 aux 4 35 5 1700 2100 0 0
-aux 5 36 1 1700 2100 0 0
+aux 5 2 4 1300 1700 0 0
+aux 6 3 2 1300 1700 0 0
+aux 7 11 2 1300 1700 0 0
 
 # rxfail
 rxfail 6 s 2000
@@ -80,6 +82,7 @@ set gps_rescue_allow_arming_without_fix = ON
 set deadband = 2
 set yaw_deadband = 2
 set pid_process_denom = 2
+set report_cell_voltage = ON
 set osd_warn_bitmask = 286719
 set osd_vbat_pos = 449
 set osd_link_quality_pos = 3333
