@@ -61,11 +61,24 @@ heading from a stretch of straight forward flight.
 ## Radio (EdgeTX)
 
 RadioMaster TX15, model `ROC7` = `MODELS/model3.yml` on the SD card, copy in
-[`radio-model.yml`](radio-model.yml). Cloned 2026-11-07 from the STELLAR model, so it has the
-same channel map, telemetry main screen and low-battery alerts (L1 < 3.5 V/cell, L2 < 3.3 V/cell);
-see [stellar25/README.md](../stellar25/README.md#radio-edgetx). Only the name and splash
-bitmap differ. Restore: radio in USB Storage mode, copy `radio-model.yml` to
-`MODELS/model3.yml`, eject.
+[`radio-model.yml`](radio-model.yml). Cloned 2026-11-07 from the STELLAR model: same channel map
+and low-battery alerts (L1 < 3.5 V/cell, L2 < 3.3 V/cell, LiPo); see
+[stellar25/README.md](../stellar25/README.md#radio-edgetx). Model ID 1 (900 MHz).
+
+Long-range screens:
+
+| Page | Layout | Left | Right |
+|---|---|---|---|
+| 1 (main) | 2x4 | RxBt (cell V), Capa (mAh), Curr (A), RQly | Dist, Alt, GSpd, FM |
+| 2 | 1x1 | Outputs | |
+| 3 | 2x3 | 1RSS (dBm), RSNR (dB), TPWR (mW) | Sats, GPS (position), RFMD (packet rate) |
+
+`Dist` is a calculated sensor (index 23, `FORMULA_DIST`, GPS source sensor 0, no altitude):
+ground distance from the first GPS fix after the radio powers up or telemetry is reset, so get
+a fix at the take-off spot. On `Layout2x3` the right column is zones 5 (top), 3 (middle),
+4 (bottom).
+
+Restore: radio in USB Storage mode, copy `radio-model.yml` to `MODELS/model3.yml`, eject.
 
 ## Failsafe and GPS Rescue
 

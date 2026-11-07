@@ -888,6 +888,25 @@ telemetrySensors:
       onlyPositive: 0
       cfg: 
          param: 0
+   23:
+      id1: 
+         id: 0
+      id2: 
+         formula: FORMULA_DIST
+      label: "Dist"
+      subId: 0
+      type: TYPE_CALCULATED
+      unit: 9
+      prec: 0
+      autoOffset: 0
+      filter: 0
+      logs: 1
+      persistent: 0
+      onlyPositive: 0
+      cfg: 
+         dist: 
+            gps: 1
+            alt: 0
 screenData: 
    0:
       LayoutId: "Layout2x4"
@@ -964,7 +983,7 @@ screenData:
                      0:
                         type: Source
                         value: 
-                           source: tele(22)
+                           source: tele(23)
                      1:
                         type: Color
                         value: 
@@ -980,7 +999,7 @@ screenData:
                      0:
                         type: Source
                         value: 
-                           source: tele(4)
+                           source: tele(3)
                      1:
                         type: Color
                         value: 
@@ -996,7 +1015,7 @@ screenData:
                      0:
                         type: Source
                         value: 
-                           source: tele(3)
+                           source: tele(1)
                      1:
                         type: Color
                         value: 
@@ -1012,7 +1031,7 @@ screenData:
                      0:
                         type: Source
                         value: 
-                           source: tele(0)
+                           source: tele(22)
                      1:
                         type: Color
                         value: 
@@ -1108,7 +1127,7 @@ screenData:
                value: 
                   boolValue: 0
    2:
-      LayoutId: "Layout1x1AM"
+      LayoutId: "Layout2x3"
       layoutData: 
          zones: 
             0:
@@ -1127,6 +1146,107 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+            1:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(8)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            2:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(11)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            3:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(0)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            4:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(10)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            5:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(4)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+         options: 
+            0:
+               type: Bool
+               value: 
+                  boolValue: 1
+            1:
+               type: Bool
+               value: 
+                  boolValue: 1
+            2:
+               type: Bool
+               value: 
+                  boolValue: 1
+            3:
+               type: Bool
+               value: 
+                  boolValue: 1
+            4:
+               type: Bool
+               value: 
+                  boolValue: 0
 topbarData: 
    zones: 
       3:
