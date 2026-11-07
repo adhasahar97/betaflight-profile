@@ -25,6 +25,9 @@ own radio model, cloned from the same template, so the channel order is identica
 
 Ranges: down = 1700-2100, middle = 1300-1700. No PREARM. Spare channels: ch11-12 (P1, P2 pots).
 
+Radio models on the TX15: `model1.yml` STELLAR, `model3.yml` ROC7 (clone of STELLAR). Each
+craft folder has a copy as `radio-model.yml`.
+
 ```
 aux 0 0 0 1700 2100 0 0    # ARM          AUX1
 aux 1 1 4 1700 2100 0 0    # ANGLE        AUX5 down

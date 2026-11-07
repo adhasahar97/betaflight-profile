@@ -342,10 +342,6 @@ customFn:
       swtch: "SF2"
       func: PLAY_SCRIPT
       def: "setGyro,1,1x"
-   2:
-      swtch: "SA1"
-      func: PLAY_TRACK
-      def: "preact,1,1x"
    3:
       swtch: "SD0"
       func: PLAY_TRACK
@@ -1043,6 +1039,22 @@ screenData:
                type: Bool
                value: 
                   boolValue: 0
+            5:
+               type: Bool
+               value: 
+                  boolValue: 0
+            6:
+               type: Color
+               value: 
+                  color: COLIDX0
+            7:
+               type: Bool
+               value: 
+                  boolValue: 0
+            8:
+               type: Color
+               value: 
+                  color: COLIDX0
    1:
       LayoutId: "Layout1x1"
       layoutData: 

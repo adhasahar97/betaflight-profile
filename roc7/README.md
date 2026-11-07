@@ -58,6 +58,15 @@ ranges 1800 to 1700, **ANGLE moved from SD up to SD down**, HORIZON and ALT/POS 
 Position Hold has no compass here: it shows `POS HOLD FAIL` until GPS has worked out the
 heading from a stretch of straight forward flight.
 
+## Radio (EdgeTX)
+
+RadioMaster TX15, model `ROC7` = `MODELS/model3.yml` on the SD card, copy in
+[`radio-model.yml`](radio-model.yml). Cloned 2026-11-07 from the STELLAR model, so it has the
+same channel map, telemetry main screen and low-battery alerts (L1 < 3.5 V/cell, L2 < 3.3 V/cell);
+see [stellar25/README.md](../stellar25/README.md#radio-edgetx). Only the name and splash
+bitmap differ. Restore: radio in USB Storage mode, copy `radio-model.yml` to
+`MODELS/model3.yml`, eject.
+
 ## Failsafe and GPS Rescue
 
 ```

@@ -79,9 +79,10 @@ RadioMaster TX15, EdgeTX 3.0.0, internal ELRS module (CRSF, 16 channels). Model 
 | CH11-12 | P1, P2 | unused |
 | CH15-16 | TILT_X, TILT_Y | unused |
 
-Special functions: voice call-outs on SA1 (`preact`), SB2 (`gps`), SD0 (`acrmod`), SE2 (`armed`);
-SF2 also runs the `setGyro` script; RGB LED always on. The template's TRAINER function on SC2
-was removed (SC down is the beeper).
+Special functions: voice call-outs on SB2 (`gps`), SD0 (`acrmod`), SE2 (`armed`); SF2 also runs
+the `setGyro` script; RGB LED always on. Removed: the template's TRAINER function on SC2 (SC down
+is the beeper) and the SA1 `preact` call-out (no PREARM in the standard layout).
+This model is the template for every quad's radio model (ROC7 is `model3.yml`).
 
 Main screen (`Layout2x4`, Value widgets), page 2 Outputs, page 3 RSSI:
 
