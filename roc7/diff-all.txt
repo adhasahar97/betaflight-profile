@@ -1,7 +1,7 @@
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.5.3 Nov 23 2025 / 16:24:59 (0e533ba76) MSP API: 1.46
-# config rev: 2c5a8b5
+# Betaflight / STM32F722 (F722) 2026.6.2 Sep 26 2026 / 12:23:55 (e0b7bb01b) MSP API: 1.48
+# config rev: 3a406c5
 
 # start the command batch
 batch start
@@ -17,19 +17,17 @@ signature
 # name: ROC7
 
 # feature
-feature SERVO_TILT
 feature GPS
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
-feature CHANNEL_FORWARDING
 feature ESC_SENSOR
 
 # serial
-serial 1 64 115200 57600 0 115200
-serial 3 131073 115200 57600 0 115200
-serial 4 1024 115200 57600 0 115200
-serial 5 2 115200 38400 0 115200
+serial UART2 64 115200 57600 0 115200
+serial UART4 131073 115200 57600 0 115200
+serial UART5 1024 115200 57600 0 115200
+serial UART6 2 115200 38400 0 115200
 
 # beacon
 beacon RX_LOST
@@ -50,7 +48,6 @@ aux 4 35 5 1700 2100 0 0
 aux 5 36 1 1700 2100 0 0
 
 # rxfail
-rxfail 3 a
 rxfail 6 s 2000
 rxfail 8 s 2000
 
@@ -62,13 +59,12 @@ set gyro_lpf1_dyn_min_hz = 0
 set acc_calibration = 9,22,23,1
 set mag_hardware = NONE
 set blackbox_sample_rate = 1/2
-set dshot_idle_value = 450
+set motor_idle = 450
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300
 set failsafe_switch_mode = STAGE2
 set failsafe_procedure = GPS-RESCUE
 set align_board_yaw = 90
-set vbat_max_cell_voltage = 435
 set ibata_scale = 140
 set yaw_motors_reversed = ON
 set small_angle = 180
@@ -79,9 +75,7 @@ set gps_rescue_min_start_dist = 30
 set gps_rescue_ascend_rate = 650
 set gps_rescue_return_alt = 50
 set gps_rescue_ground_speed = 1000
-set gps_rescue_max_angle = 35
 set gps_rescue_descend_rate = 100
-set gps_rescue_throttle_max = 1600
 set gps_rescue_allow_arming_without_fix = ON
 set deadband = 2
 set yaw_deadband = 2
@@ -112,9 +106,10 @@ set osd_pit_ang_pos = 289
 set osd_disarmed_pos = 2550
 set osd_stick_overlay_left_pos = 2543
 set osd_stick_overlay_right_pos = 2559
-set debug_mode = GYRO_SCALED
 set craft_name = ROC7
 set pilot_name = ADHA
+set ap_throttle_max = 1600
+set ap_max_angle = 35
 
 profile 0
 
@@ -122,17 +117,17 @@ profile 0
 set anti_gravity_gain = 120
 set p_pitch = 106
 set i_pitch = 95
-set d_pitch = 108
+set d_pitch = 98
 set f_pitch = 141
 set p_roll = 81
 set i_roll = 72
-set d_roll = 76
+set d_roll = 69
 set f_roll = 108
 set p_yaw = 61
 set i_yaw = 101
 set f_yaw = 0
-set d_min_roll = 69
-set d_min_pitch = 98
+set d_max_roll = 76
+set d_max_pitch = 108
 set feedforward_jitter_factor = 10
 set dyn_idle_min_rpm = 35
 set simplified_pids_mode = OFF
@@ -140,7 +135,7 @@ set simplified_master_multiplier = 165
 set simplified_i_gain = 50
 set simplified_d_gain = 140
 set simplified_pi_gain = 110
-set simplified_dmax_gain = 30
+set simplified_d_max_gain = 30
 set simplified_feedforward_gain = 55
 set simplified_pitch_d_gain = 125
 set simplified_pitch_pi_gain = 125
@@ -173,8 +168,20 @@ rateprofile 2
 
 rateprofile 3
 
+battery_profile 0
+
+# battery_profile 0
+set vbat_max_cell_voltage = 435
+
+battery_profile 1
+
+battery_profile 2
+
 # restore original rateprofile selection
 rateprofile 0
+
+# restore original battery_profile selection
+battery_profile 0
 
 # save configuration
 save

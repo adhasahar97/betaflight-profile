@@ -13,6 +13,14 @@ Firmware has the Chirp build option and the test settings are on the quad (see
       `set debug_mode = NONE`, `set blackbox_high_resolution = OFF`, `aux 6 0 0 900 900 0 0`, `aux 7 0 0 900 900 0 0`.
 - [ ] Erase the blackbox flash, `diff all`, commit the new tune to `stellar25/diff-all.txt`.
 
+## ROC7: checks after the 2026.6.2 upgrade
+
+- [ ] Setup tab orientation check (nose down, roll right, yaw right).
+- [ ] Receiver tab (LiPo in, props off, do not arm): sticks and AUX1-AUX6 move the right channels.
+- [ ] Motors tab, props off: motor order and direction unchanged (props out).
+- [ ] GPS gets satellites outdoors; ESC telemetry shows RPM / temperature.
+- [ ] First hover in Angle mode before flying the custom tune hard (D values were remapped to the new D-max scheme).
+
 ## STELLAR25: other open checks
 
 - [ ] GPS gets satellites outdoors (BZ-121 on UART1).
