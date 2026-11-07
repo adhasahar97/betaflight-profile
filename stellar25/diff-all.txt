@@ -18,6 +18,7 @@ signature
 
 # feature
 feature GPS
+feature TELEMETRY
 feature LED_STRIP
 feature OSD
 
@@ -27,6 +28,7 @@ serial UART4 64 115200 57600 0 115200
 serial UART6 131073 115200 57600 0 115200
 
 # beacon
+beacon RX_LOST
 beacon RX_SET
 
 # aux
@@ -42,7 +44,7 @@ set gyro_lpf1_static_hz = 0
 set dyn_notch_count = 1
 set dyn_notch_q = 500
 set gyro_lpf1_dyn_min_hz = 0
-set acc_calibration = -12,-9,-66,1
+set acc_calibration = 4,-5,-47,1
 set blackbox_sample_rate = 1/2
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300

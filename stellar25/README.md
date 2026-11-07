@@ -57,6 +57,17 @@ high position. Change it to 1700-2100 if it should be high only.
 
 Failsafe procedure: GPS Rescue (`gps_rescue_allow_arming_without_fix = ON`).
 
+## Telemetry and lost-quad beeper
+
+```
+feature TELEMETRY   # CRSF telemetry to the radio: battery, mAh, flight mode, GPS position
+beacon RX_LOST      # motors beep (DShot beacon) when the radio link is lost
+beacon RX_SET       # motors beep when the BEEPER switch (AUX4) is on
+```
+
+After a crash out of sight: the radio keeps the last GPS position, and turning the radio off
+makes the quad beep.
+
 ## Assisted crash flip
 
 Betaflight 2025.12+ feature ([betaflight#13391](https://github.com/betaflight/betaflight/issues/13391),
@@ -77,7 +88,7 @@ Tuning: too weak to flip, try `crashflip_rate = 0`. Flips twice, lower to about 
 ## Pre-flight checks after a restore or reflash
 
 - [ ] Setup tab: nose down, roll right and yaw right each move the 3D model the same way.
-- [ ] Setup tab: *Calibrate Accelerometer* on a level surface.
+- [ ] Setup tab: *Calibrate Accelerometer* on a level surface (last done 2026-11-07 on 2026.6.2).
 - [ ] Receiver tab (LiPo in, props off, do not arm): every stick and switch moves the right
       channel the right way.
 - [ ] GPS gets satellites outdoors.
