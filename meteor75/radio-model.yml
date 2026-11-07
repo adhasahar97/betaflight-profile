@@ -346,7 +346,7 @@ logicalSw:
       duration: 0
    3:
       func: FUNC_VNEG
-      def: "tele(15),37"
+      def: "tele(15),36"
       andsw: "L3"
       lsPersist: 0
       lsState: 0
