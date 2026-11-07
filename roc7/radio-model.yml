@@ -1,4 +1,4 @@
-semver: 3.0.0
+semver: 2.12.5
 header: 
    name: "ROC7"
    modelId: 
@@ -434,6 +434,7 @@ jitterFilter: GLOBAL
 moduleData: 
    0:
       type: TYPE_CROSSFIRE
+      antennaMode: MODE_PER_MODEL
       subType: 0
       channelsStart: 0
       channelsCount: 16
@@ -909,7 +910,7 @@ telemetrySensors:
             alt: 0
 screenData: 
    0:
-      LayoutId: "Layout2x4"
+      LayoutId: Layout2x4
       layoutData: 
          zones: 
             0:
@@ -928,6 +929,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             1:
                widgetName: "Value"
                widgetData: 
@@ -944,6 +953,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             2:
                widgetName: "Value"
                widgetData: 
@@ -960,6 +977,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             3:
                widgetName: "Value"
                widgetData: 
@@ -976,6 +1001,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             4:
                widgetName: "Value"
                widgetData: 
@@ -992,6 +1025,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             5:
                widgetName: "Value"
                widgetData: 
@@ -1008,6 +1049,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             6:
                widgetName: "Value"
                widgetData: 
@@ -1024,6 +1073,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             7:
                widgetName: "Value"
                widgetData: 
@@ -1040,6 +1097,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
          options: 
             0:
                type: Bool
@@ -1078,7 +1143,7 @@ screenData:
                value: 
                   color: COLIDX0
    1:
-      LayoutId: "Layout1x1"
+      LayoutId: Layout1x1
       layoutData: 
          zones: 
             0:
@@ -1127,7 +1192,7 @@ screenData:
                value: 
                   boolValue: 0
    2:
-      LayoutId: "Layout2x3"
+      LayoutId: Layout2x3
       layoutData: 
          zones: 
             0:
@@ -1146,6 +1211,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             1:
                widgetName: "Value"
                widgetData: 
@@ -1162,6 +1235,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             2:
                widgetName: "Value"
                widgetData: 
@@ -1178,6 +1259,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             3:
                widgetName: "Value"
                widgetData: 
@@ -1194,6 +1283,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             4:
                widgetName: "Value"
                widgetData: 
@@ -1210,6 +1307,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
             5:
                widgetName: "Value"
                widgetData: 
@@ -1226,6 +1331,14 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 0
+                     3:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
+                     4:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 0
          options: 
             0:
                type: Bool
@@ -1318,7 +1431,7 @@ customSwitches:
       type: 2POS
       group: 1
       start: START_PREVIOUS
-      state: 1
+      state: 0
       onColorLuaOverride: OFF
       offColorLuaOverride: OFF
       onColor: 
@@ -1382,7 +1495,7 @@ customSwitches:
       type: 2POS
       group: 1
       start: START_PREVIOUS
-      state: 0
+      state: 1
       onColorLuaOverride: OFF
       offColorLuaOverride: OFF
       onColor: 

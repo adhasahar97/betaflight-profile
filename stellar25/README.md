@@ -64,7 +64,7 @@ Failsafe procedure: GPS Rescue (`gps_rescue_allow_arming_without_fix = ON`).
 
 ## Radio (EdgeTX)
 
-RadioMaster TX15, EdgeTX 3.0.0, internal ELRS module (CRSF, 16 channels). Model `STELLAR` is
+RadioMaster TX15, EdgeTX 2.12.5, internal ELRS module (CRSF, 16 channels). Model `STELLAR` is
 `MODELS/model1.yml` on the radio's SD card; copy in [`radio-model.yml`](radio-model.yml).
 
 | Channel | Source | Used for |
