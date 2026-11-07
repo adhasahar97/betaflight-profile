@@ -13,11 +13,11 @@ Firmware has the Chirp build option and the test settings are on the quad (see
       `set debug_mode = NONE`, `set blackbox_high_resolution = OFF`, `aux 8 0 0 900 900 0 0`, `aux 9 0 0 900 900 0 0`.
 - [ ] Erase the blackbox flash, `diff all`, commit the new tune to `stellar25/diff-all.txt`.
 
-## Radio: one-time ELRS band setup (props off, do not arm)
+## Radio: one-time ELRS band setup (done 2026-11-07, both models link)
 
-- [ ] Select model ROC7 (model ID 1): ExpressLRS Lua, set the 900 MHz packet rate used for ROC7. Confirm it links.
-- [ ] Select model STELLAR (model ID 0): ExpressLRS Lua, confirm the 2.4 GHz packet rate. Confirm it links.
-- [ ] Switch between the two models once more and check each still links without touching the Lua.
+- [x] Select model ROC7 (model ID 1): ExpressLRS Lua, set the 900 MHz packet rate used for ROC7. Confirm it links.
+- [x] Select model STELLAR (model ID 0): ExpressLRS Lua, confirm the 2.4 GHz packet rate. Confirm it links.
+- [x] Switch between the two models once more and check each still links without touching the Lua.
 
 ## ROC7: checks after the 2026.6.2 upgrade
 
