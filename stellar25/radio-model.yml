@@ -316,6 +316,23 @@ expoData:
    chn: 3
    flightModes: 000000000
    name: ""
+logicalSw: 
+   0:
+      func: FUNC_VNEG
+      def: "tele(15),35"
+      andsw: "NONE"
+      lsPersist: 0
+      lsState: 0
+      delay: 30
+      duration: 0
+   1:
+      func: FUNC_VNEG
+      def: "tele(15),33"
+      andsw: "NONE"
+      lsPersist: 0
+      lsState: 0
+      delay: 20
+      duration: 0
 customFn: 
    0:
       swtch: "ON"
@@ -341,6 +358,22 @@ customFn:
       swtch: "SE2"
       func: PLAY_TRACK
       def: "armed,1,1x"
+   6:
+      swtch: "L1"
+      func: PLAY_VALUE
+      def: "tele(15),1,10"
+   7:
+      swtch: "L1"
+      func: HAPTIC
+      def: "1,1,10"
+   8:
+      swtch: "L2"
+      func: PLAY_SOUND
+      def: "Wrn2,1,5"
+   9:
+      swtch: "L2"
+      func: HAPTIC
+      def: "3,1,5"
 flightModeData: 
    0:
       name: ""
@@ -858,55 +891,137 @@ telemetrySensors:
          param: 0
 screenData: 
    0:
-      LayoutId: "Layout2P1"
+      LayoutId: "Layout2x4"
       layoutData: 
          zones: 
             0:
-               widgetName: "ModelBmp"
+               widgetName: "Value"
                widgetData: 
                   options: 
                      0:
-                        type: Color
+                        type: Source
                         value: 
-                           color: COLIDX3
-                     2:
-                        type: Bool
-                        value: 
-                           boolValue: 0
-                     3:
-                        type: Color
-                        value: 
-                           color: COLIDX5
-                     4:
-                        type: Bool
-                        value: 
-                           boolValue: 1
-            1:
-               widgetName: "Timer"
-            2:
-               widgetName: "Outputs"
-               widgetData: 
-                  options: 
-                     0:
-                        type: Signed
-                        value: 
-                           signedValue: 1
+                           source: tele(15)
                      1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
                         type: Bool
                         value: 
                            boolValue: 0
+            1:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(17)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
                      2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            2:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(16)
+                     1:
                         type: Color
                         value: 
-                           color: COLIDX5
-                     3:
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            3:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(7)
+                     1:
                         type: Color
                         value: 
-                           color: COLIDX0
-                     4:
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            4:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(22)
+                     1:
                         type: Color
                         value: 
-                           color: COLIDX3
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            5:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(4)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            6:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(3)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+            7:
+               widgetName: "Value"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Source
+                        value: 
+                           source: tele(0)
+                     1:
+                        type: Color
+                        value: 
+                           color: COLIDX1
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 0
          options: 
             0:
                type: Bool

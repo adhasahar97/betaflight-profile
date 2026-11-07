@@ -75,12 +75,33 @@ Special functions: voice call-outs on SA1 (`preact`), SB2 (`gps`), SD0 (`acrmod`
 SF2 also runs the `setGyro` script; RGB LED always on. The template's TRAINER function on SC2
 was removed (SC down is the beeper).
 
+Main screen (`Layout2x4`, Value widgets), page 2 Outputs, page 3 RSSI:
+
+| Left | Right |
+|---|---|
+| RxBt (average cell voltage) | FM (flight mode) |
+| Capa (mAh used) | Sats |
+| Curr (A) | Alt |
+| RQly (link quality) | GPS (position) |
+
+Low-battery alerts, on average cell voltage (`report_cell_voltage = ON` on the quad):
+
+| Logical switch | Condition | Special functions |
+|---|---|---|
+| L1 | RxBt < 3.5 V for 3 s | speak RxBt every 10 s, light haptic every 10 s |
+| L2 | RxBt < 3.3 V for 2 s | `Wrn2` tone every 5 s, strong haptic every 5 s |
+
+Not tied to the arm switch: EdgeTX already treats telemetry-based logical switches as off when
+telemetry is not streaming, so the alerts also warn about a low pack left plugged in on the bench.
+Thresholds match Betaflight's `vbat_warning_cell_voltage` (3.5) and `vbat_min_cell_voltage` (3.3).
+
 Restore: radio in USB Storage mode, copy `radio-model.yml` to `MODELS/model1.yml`, eject.
 
 ## Telemetry and lost-quad beeper
 
 ```
 feature TELEMETRY   # CRSF telemetry to the radio: battery, mAh, flight mode, GPS position
+set report_cell_voltage = ON   # RxBt on the radio = average cell voltage, not pack voltage
 beacon RX_LOST      # motors beep (DShot beacon) when the radio link is lost
 beacon RX_SET       # motors beep when the BEEPER switch (AUX4) is on
 ```
