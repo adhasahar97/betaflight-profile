@@ -35,7 +35,7 @@ Betaflight **2026.6.2**, cloud build:
 | Telemetry protocol | Automatically included |
 | OSD protocol | Digital |
 | Motor protocol | DSHOT |
-| Other options | Acro Trainer, GPS, LED Strip, Pin IO, VTX |
+| Other options | Acro Trainer, GPS, LED Strip, Pin IO, VTX, Chirp |
 | Race Pro | off |
 
 The build also pulls in Altitude Hold and Position Hold with GPS. No magnetometer support
@@ -125,6 +125,27 @@ over about half a second. Motors stop on their own once it has flipped. Throttle
 turtle switch off, take off.
 
 Tuning: too weak to flip, try `crashflip_rate = 0`. Flips twice, lower to about 20.
+
+## Autotune (chirp)
+
+The Betaflight App's **Autotune** tab analyses a blackbox log recorded with `debug_mode = CHIRP`
+and recommends gains. Needs the **Chirp** cloud-build option. Test setup currently in
+`diff-all.txt`:
+
+```
+set debug_mode = CHIRP
+set blackbox_high_resolution = ON
+aux 6 55 1 1700 2100 0 0   # CHIRP mode on AUX2 (SA down)
+aux 7 26 1 1700 2100 0 0   # BLACKBOX on AUX2: log only while SA is down (8 MB flash)
+```
+
+Flight: open space, fresh pack, hover 2-3 m in Angle mode. SA down: OSD shows `CHIR`, the
+quad shakes on roll; hold position, wait for `CHIRP IS FINISHED`, SA up. Repeat for pitch,
+then yaw (each SA down moves to the next axis). SA up stops it at once.
+
+Then: Blackbox tab, *Save flash to file*; Autotune tab, *Import* the `.bbl`; review and apply.
+Afterwards remove the test lines (`debug_mode`, `blackbox_high_resolution`, aux 6/7) and erase
+the flash.
 
 ## Pre-flight checks after a restore or reflash
 
