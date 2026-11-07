@@ -1,7 +1,7 @@
 
 # version
-# Betaflight / STM32G47X (SG47) 4.5.1 Dec 11 2025 / 08:14:05 (77d01ba3b) MSP API: 1.46
-# config rev: 111d518
+# Betaflight / STM32G474 (G474) 2026.6.2 Nov  7 2026 / 18:28:49 (e0b7bb01b) MSP API: 1.48
+# config rev: 3a406c5
 
 # start the command batch
 batch start
@@ -20,7 +20,8 @@ signature
 feature OSD
 
 # serial
-serial 3 131073 115200 57600 0 115200
+serial UART2 0 115200 57600 0 115200
+serial UART4 131073 115200 57600 0 115200
 
 # beacon
 beacon RX_LOST
@@ -28,10 +29,12 @@ beacon RX_SET
 
 # aux
 aux 0 0 0 1700 2100 0 0
-aux 1 1 4 900 1300 0 0
+aux 1 1 4 1700 2100 0 0
 aux 2 2 4 1300 1700 0 0
 aux 3 13 3 1700 2100 0 0
 aux 4 35 5 1700 2100 0 0
+aux 8 55 1 1700 2100 0 0
+aux 9 26 1 1700 2100 0 0
 
 # master
 set gyro_lpf1_static_hz = 0
@@ -43,16 +46,17 @@ set gyro_lpf1_dyn_min_hz = 0
 set acc_trim_pitch = -2
 set acc_calibration = 12,-14,13,1
 set baro_hardware = NONE
-set dshot_idle_value = 500
+set blackbox_high_resolution = ON
+set motor_idle = 500
 set dshot_bidir = ON
 set dshot_bitbang = AUTO
 set motor_pwm_protocol = DSHOT300
 set motor_poles = 12
-set vbat_max_cell_voltage = 440
-set vbat_warning_cell_voltage = 345
+set align_board_yaw = 270
 set ibata_scale = 550
 set ibata_offset = -100
 set small_angle = 180
+set report_cell_voltage = ON
 set osd_rssi_dbm_alarm = -99
 set osd_vbat_pos = 2561
 set osd_rssi_pos = 192
@@ -79,9 +83,7 @@ set osd_disarmed_pos = 267
 set osd_esc_tmp_pos = 129
 set osd_esc_rpm_pos = 150
 set osd_core_temp_pos = 225
-set debug_mode = GYRO_SCALED
-set gyro_1_sensor_align = CW90
-set gyro_1_align_yaw = 900
+set debug_mode = CHIRP
 set craft_name = Meteor75 Pro
 
 profile 0
@@ -97,20 +99,19 @@ set anti_gravity_gain = 50
 set throttle_boost = 0
 set p_pitch = 64
 set i_pitch = 103
-set d_pitch = 67
+set d_pitch = 58
 set f_pitch = 42
 set p_roll = 64
 set i_roll = 103
-set d_roll = 48
+set d_roll = 43
 set f_roll = 43
 set p_yaw = 64
 set i_yaw = 103
 set f_yaw = 43
-set d_min_roll = 43
-set d_min_pitch = 58
+set d_max_roll = 48
+set d_max_pitch = 67
 set auto_profile_cell_count = 1
 set thrust_linear = 30
-set feedforward_averaging = 2_POINT
 set feedforward_smooth_factor = 60
 set feedforward_jitter_factor = 10
 set dyn_idle_min_rpm = 30
@@ -118,7 +119,7 @@ set simplified_master_multiplier = 120
 set simplified_i_gain = 90
 set simplified_d_gain = 120
 set simplified_pi_gain = 120
-set simplified_dmax_gain = 40
+set simplified_d_max_gain = 40
 set simplified_feedforward_gain = 30
 set simplified_pitch_d_gain = 120
 set simplified_pitch_pi_gain = 95
@@ -155,8 +156,21 @@ rateprofile 2
 
 rateprofile 3
 
+battery_profile 0
+
+# battery_profile 0
+set vbat_max_cell_voltage = 440
+set vbat_warning_cell_voltage = 345
+
+battery_profile 1
+
+battery_profile 2
+
 # restore original rateprofile selection
 rateprofile 0
+
+# restore original battery_profile selection
+battery_profile 0
 
 # save configuration
 save

@@ -2,13 +2,18 @@
 
 ## Meteor75 Pro: onboarding (started 2026-11-08)
 
-- [ ] Flash Betaflight 2026.6.2, target `BETAFPVG473`, with Full chip erase (options in [meteor75/README.md](meteor75/README.md)).
-- [ ] Restore the migrated config: D-min to D-max swap, renames, gyro `CW90` becomes `align_board_yaw = 270`.
-- [ ] Setup tab orientation check (nose down, roll right, yaw right).
-- [ ] Standard switch layout (ANGLE to SD down), `feature TELEMETRY`, `report_cell_voltage = ON`.
-- [ ] Radio: new model with the next free ELRS model ID (2), whoop telemetry screen, battery alerts.
-- [ ] Bind the receiver, set the 2.4 GHz packet rate in the ExpressLRS Lua, check it links.
-- [ ] Motors tab, props off: motor order and direction. First hover in Angle mode.
+- [x] Flash Betaflight 2026.6.2 with Chirp, target `BETAFPVG473` (needs the BOOT button for DFU).
+- [x] Restore the migrated config, standard switch layout, `report_cell_voltage = ON`.
+- [x] Radio model `METEOR75` (`model4.yml`, ELRS model ID 2), whoop main screen, battery alerts.
+- [x] Chirp test setup on SA down, blackbox flash erased.
+- [ ] Setup tab orientation check (nose down, roll right, yaw right): proves `align_board_yaw = 270`.
+- [ ] Select METEOR75 on the radio, bind the receiver, set the 2.4 GHz packet rate in the ExpressLRS Lua, check it links.
+- [ ] Switch to STELLAR and ROC7 once and check each still links on its own band.
+- [ ] Receiver tab (LiPo in, props off, do not arm): sticks and AUX1-AUX6 move the right channels.
+- [ ] Motors tab, props off: motor order and direction.
+- [ ] First hover in Angle mode (D values were remapped to the new D-max scheme).
+- [ ] Chirp test flight, Autotune import, then remove the test lines and erase the flash
+      (same steps as STELLAR below).
 
 ## STELLAR25: chirp autotune (in progress, set up 2026-11-07)
 

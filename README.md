@@ -6,7 +6,7 @@ Betaflight configuration backups for my quads, one folder per craft.
 |---|---|---|---|
 | [STELLAR25](stellar25/) | JHEMCU GHF405AIO-HD (`JHEF405PRO`) | Betaflight 2026.6.2 | [`stellar25/diff-all.txt`](stellar25/diff-all.txt) |
 | [ROC7](roc7/) | HAKRC F722 V2 (`HAKRCF722V2`) | Betaflight 2026.6.2 | [`roc7/diff-all.txt`](roc7/diff-all.txt) |
-| [Meteor75 Pro](meteor75/) | BetaFPV G473 (`BETAFPVG473`) | Betaflight 4.5.1 | [`meteor75/diff-all.txt`](meteor75/diff-all.txt) |
+| [Meteor75 Pro](meteor75/) | BetaFPV G473 (`BETAFPVG473`) | Betaflight 2026.6.2 | [`meteor75/diff-all.txt`](meteor75/diff-all.txt) |
 
 Open work: [TODO.md](TODO.md).
 
@@ -25,9 +25,11 @@ own radio model, cloned from the same template, so the channel order is identica
 | SF (button) | ch10, AUX6 | | | TURTLE (hold) |
 
 Ranges: down = 1700-2100, middle = 1300-1700. No PREARM. Spare channels: ch11-12 (P1, P2 pots).
+A quad without GPS (Meteor75 Pro) leaves out GPS RESCUE, ALT HOLD and POS HOLD (`aux 2, 6, 7`);
+SB then does nothing.
 
-Radio models on the TX15: `model1.yml` STELLAR, `model3.yml` ROC7 (clone of STELLAR). Each
-craft folder has a copy as `radio-model.yml`.
+Radio models on the TX15 (EdgeTX 2.12.5): `model1.yml` STELLAR, `model3.yml` ROC7 and
+`model4.yml` METEOR75 (both clones of STELLAR). Each craft folder has a copy as `radio-model.yml`.
 
 ## ELRS bands
 
@@ -39,6 +41,7 @@ in each EdgeTX model. Selecting the model on the radio therefore selects the ban
 |---|---|---|---|
 | STELLAR25 | 2.4 GHz | `model1.yml` STELLAR | 0 (default, not written in the file) |
 | ROC7 | 900 MHz | `model3.yml` ROC7 | 1 (`header.modelId.0.val`) |
+| Meteor75 Pro | 2.4 GHz | `model4.yml` METEOR75 | 2 |
 
 A new craft gets the next free model ID. After creating its model, select it on the radio and set
 the packet rate for its band once in the ExpressLRS Lua script.
