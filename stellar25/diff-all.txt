@@ -1,0 +1,154 @@
+
+# version
+# Betaflight / STM32F405 (F405) 2026.6.2 Sep 19 2026 / 03:30:04 (e0b7bb01b) MSP API: 1.48
+# config rev: 3a406c5
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name JHEF405PRO
+manufacturer_id JHEF
+mcu_id 002e00423130500720353248
+signature 
+
+# name: STELLAR25
+
+# feature
+feature GPS
+feature LED_STRIP
+feature OSD
+
+# serial
+serial UART1 2 115200 57600 0 115200
+serial UART4 64 115200 57600 0 115200
+serial UART6 131073 115200 57600 0 115200
+
+# beacon
+beacon RX_SET
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 4 1700 2100 0 0
+aux 2 2 4 1300 1700 0 0
+aux 3 46 2 1225 2100 0 0
+aux 4 13 3 1700 2100 0 0
+aux 5 35 5 1700 2100 0 0
+
+# master
+set gyro_lpf1_static_hz = 0
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set gyro_lpf1_dyn_min_hz = 0
+set acc_calibration = -12,-9,-66,1
+set blackbox_sample_rate = 1/2
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+set failsafe_procedure = GPS-RESCUE
+set align_board_roll = 180
+set align_board_yaw = 270
+set ibata_scale = 107
+set ibata_offset = -500
+set crashflip_rate = 30
+set crashflip_auto_rearm = ON
+set small_angle = 180
+set gps_ublox_use_galileo = ON
+set gps_rescue_allow_arming_without_fix = ON
+set deadband = 2
+set yaw_deadband = 2
+set pid_process_denom = 2
+set osd_vbat_pos = 301
+set osd_link_quality_pos = 2551
+set osd_tim_2_pos = 2464
+set osd_throttle_pos = 2368
+set osd_crosshairs_pos = 238
+set osd_ah_sbar_pos = 239
+set osd_ah_pos = 2234
+set osd_current_pos = 288
+set osd_mah_drawn_pos = 2528
+set osd_craft_name_pos = 2538
+set osd_gps_lon_pos = 2082
+set osd_gps_lat_pos = 2050
+set osd_gps_sats_pos = 2113
+set osd_home_dir_pos = 2158
+set osd_home_dist_pos = 2124
+set osd_warnings_pos = 14730
+set osd_avg_cell_voltage_pos = 2496
+set osd_battery_usage_pos = 49493
+set osd_flip_arrow_pos = 2426
+set osd_stat_bitmask = 276396
+set craft_name = STELLAR25
+
+profile 0
+
+# profile 0
+set anti_gravity_gain = 70
+set p_pitch = 109
+set i_pitch = 175
+set d_pitch = 68
+set f_pitch = 154
+set p_roll = 71
+set i_roll = 115
+set d_roll = 45
+set f_roll = 101
+set p_yaw = 71
+set i_yaw = 115
+set f_yaw = 101
+set d_max_roll = 48
+set d_max_pitch = 73
+set feedforward_smooth_factor = 45
+set dyn_idle_min_rpm = 25
+set simplified_i_gain = 90
+set simplified_d_gain = 150
+set simplified_pi_gain = 160
+set simplified_d_max_gain = 20
+set simplified_feedforward_gain = 85
+set simplified_pitch_d_gain = 135
+set simplified_pitch_pi_gain = 145
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_expo = 28
+set pitch_expo = 28
+set yaw_expo = 28
+set roll_srate = 56
+set pitch_srate = 58
+set yaw_srate = 54
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+battery_profile 0
+
+# battery_profile 0
+set vbat_max_cell_voltage = 435
+
+battery_profile 1
+
+battery_profile 2
+
+# restore original rateprofile selection
+rateprofile 0
+
+# restore original battery_profile selection
+battery_profile 0
+
+# save configuration
+save
