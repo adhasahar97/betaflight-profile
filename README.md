@@ -28,6 +28,20 @@ Ranges: down = 1700-2100, middle = 1300-1700. No PREARM. Spare channels: ch11-12
 Radio models on the TX15: `model1.yml` STELLAR, `model3.yml` ROC7 (clone of STELLAR). Each
 craft folder has a copy as `radio-model.yml`.
 
+## ELRS bands
+
+The TX15's internal ELRS module (LR1121) runs 2.4 GHz or 900 MHz, one at a time. ELRS keeps its
+settings (packet rate, so the band) per **model ID**, the receiver number of the internal module
+in each EdgeTX model. Selecting the model on the radio therefore selects the band.
+
+| Craft | Receiver band | EdgeTX model | Model ID (internal module) |
+|---|---|---|---|
+| STELLAR25 | 2.4 GHz | `model1.yml` STELLAR | 0 (default, not written in the file) |
+| ROC7 | 900 MHz | `model3.yml` ROC7 | 1 (`header.modelId.0.val`) |
+
+A new craft gets the next free model ID. After creating its model, select it on the radio and set
+the packet rate for its band once in the ExpressLRS Lua script.
+
 ```
 aux 0 0 0 1700 2100 0 0    # ARM          AUX1
 aux 1 1 4 1700 2100 0 0    # ANGLE        AUX5 down

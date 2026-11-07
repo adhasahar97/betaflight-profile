@@ -6,7 +6,7 @@
 |---|---|
 | Flight controller | JHEMCU GHF405AIO-HD, AIO with 4-in-1 ESC. Betaflight target `JHEF405PRO`, STM32F405, ICM42688P gyro |
 | Mounting | FC mounted upside down (`align_board_roll = 180`) |
-| Receiver | ExpressLRS, CRSF protocol |
+| Receiver | ExpressLRS **2.4 GHz**, CRSF protocol. Radio model ID 0 on the TX15 internal module |
 | GPS | BZGNSS BZ-121 (u-blox), `gps_auto_config = ON` |
 | Video | Digital VTX on the HD connector, MSP DisplayPort OSD |
 | Motors | 12 poles, DShot300 bidirectional (RPM filter) |

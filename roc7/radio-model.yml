@@ -1,6 +1,9 @@
 semver: 3.0.0
 header: 
    name: "ROC7"
+   modelId: 
+      0:
+         val: 1
    bitmap: ""
    labels: "Favorites"
 telemetryProtocol: 0

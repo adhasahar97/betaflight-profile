@@ -9,7 +9,7 @@ Onboarded 2026-11-07 on Betaflight 4.5.3, upgraded the same day to 2026.6.2.
 | Flight controller | HAKRC F722 V2. Betaflight target `HAKRCF722V2`, STM32F722 |
 | Sensors detected | Gyro, accelerometer, barometer, GPS |
 | Compass | Supported by the build, not enabled (`mag_hardware = NONE`) |
-| Receiver | ExpressLRS, CRSF on UART2 |
+| Receiver | ExpressLRS **900 MHz**, CRSF on UART2. Radio model ID 1 on the TX15 internal module |
 | GPS | UART6, `gps_auto_baud = ON` |
 | Video | Digital VTX on UART4 (MSP DisplayPort) |
 | ESCs | DShot300 bidirectional, ESC telemetry on UART5, props out (`yaw_motors_reversed = ON`), idle 4.5% (`motor_idle = 450`) |
